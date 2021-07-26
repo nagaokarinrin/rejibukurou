@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="auther" content=”りん”>
+    <meta name="descriotion" cintent="スマホで表示する注文補助ツールです。">
+    <link rel="shortcut icon" href="image/favicon.ico">
+    <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="image/android-chrome-192x192.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <title>れじぶくろう</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <BODY>
+    <header>
+    </header>
+    <main>
+      <div id="firstPage">
+        <h1><img src="image/rejibukuro_title_logo.png" alt=""></h1>
+        <div class="rejibukuro">
+          <h2>レジ袋</h2>
+            <!-- <input type="checkbox" id="isNeedReceipt" name="checkbox03" checked="checked"> -->
+            <form>
+              <input id="rejibukuroRadiobuttonNeed" type="radio" name="q1" value=true>いる
+              <input id="rejibukuroRadiobuttonNoneed" type="radio" name="q1" value=false>いらない
+            </form>
+
+        </div>
+        <div class="poitCard">
+          <h2>ポイントカード</h2>
+            <!-- <input type="checkbox" id="isNeedPointcard" name="checkbox03" checked="checked"> -->
+            <form>
+              <input id="poitCardRadiobuttonNeed" type="radio" name="q1" value=true>ある
+              <input id="poitCardRadiobuttonNoneed" type="radio" name="q1" value=false>ない
+            </form>            
+
+        </div>
+        <h2>自由入力</h2>
+        <p>（自動保存されます）</p>
+          <div class="cp_iptxt">
+            <label class="ef">
+            <input type="text" placeholder="支払い方法など">
+            </label>
+          </div>
+          <div class="cp_iptxt">
+            <label class="ef">
+            <input type="text" placeholder="支払い方法など">
+            </label>
+          </div>
+      </div> 
+
+      <div id="secondPage">
+        <div class="order01">
+          <img id="rejibukuroImage" src="image/rejibukurou_01.png" alt="">
+        </div>
+        <div class="order02">
+          <img id="pointcardImage" src="image/rejibukurou_02.png" alt="">
+        </div>
+        <div class="turnBtn">
+          <span class="button"><img src="image/botann_01.png"></span>
+        </div>
+      </div> 
+
+      <div id="btn">
+        <div class="btn01">
+          <span class="btn btn--orange btn--circle btn--circle-a btn--shadow">表示</span>
+          
+        </div>
+      </div>    
+    </main>
+    <footer>
+      <small>&copy; 2021れじぶくろうnorinrin.com</small>
+    </footer>
+    <script src="js/main.js"></script>   
+  </BODY>
+
+  </html>
