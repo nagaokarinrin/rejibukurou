@@ -1,9 +1,4 @@
 'use strict'
-
-//ラジオボタン要素を取得
-// let rejibukuro1 = document.getElementById('isNeedReceipt');
-// let rejibukuro2 = document.getElementById('isNeedPointcard');
-
 // ページ読み込み時にラジオボタンにチェックする
 document.getElementById('rejibukuroRadiobuttonNeed').checked = true;
 document.getElementById('poitCardRadiobuttonNeed').checked = true;
@@ -14,6 +9,7 @@ let switchBtn = document.getElementById('btn');
 //表示・非表示を切り替える要素を取得
 let firstPage = document.getElementById('firstPage');
 let secondPage = document.getElementById('secondPage');
+
 
 //TOPでsecondPage要素を非表示
 secondPage.style.display='none';
@@ -63,26 +59,56 @@ let changeElement = (first, second)=> {
     first.style.display='';
     second.style.display='none';
   }
+
+  var text = getFreeFormText("input-message01");
+  var text2 = getFreeFormText("input-message02");
+  inputFreeTextToForm(text, "output-message01");
+  inputFreeTextToForm(text2, "output-message02");
 }
+
+//テキスト入力
+const getFreeFormText = (id) => {
+  const textbox = document.getElementById(id);
+  const inputValue = textbox.value;
+  return inputValue;
+}
+
+const inputFreeTextToForm = (text, id) => {
+  //テキストボックスの値を使って、出力するメッセージを生成する
+  const output = "" + text + "";
+
+  //出力用のp要素にメッセージを表示
+  document.getElementById(id).innerHTML = output;
+}
+
+//表示ボタンを戻るボタンに変更
+const btn = document.getElementById("btn");
+    let flg = false;
+
+    const func1 = () => {
+      if (flg) {
+        btn.style.border = "solid 2px red";
+        btn.style.borderRadius = "20px";
+        btn.style.backgroundColor = "orange";
+      } else {
+        btn.style.border = "dashed 4px blue";
+        btn.style.borderRadius = "0px";
+        btn.style.backgroundColor = "lightblue";
+      }
+      flg = !flg;
+    }
 
 //上記関数をボタンクリック時に実行
 switchBtn.addEventListener('click', ()=> {
   changeElement(firstPage, secondPage);
 }, false);
 
-//画像を表示
-/*(function() {
-  var canvas = document.getElementById('rejibukuroImage');
-      var context = canvas.getContext('2d');
-
-      var image = new Image();
-      image.src = 'image/rejibukurou_03.png';
-      image.addEventListener('load', function() {
-          context.drawImage(image, 0, 0, 150, 100);
-          
-      }, false);
-})();*/
-
-//上記関数をボタンクリック時に実行
-// let checkBox = document.getElementById('isNeedReceipt');
-// checkBox.addEventListener('click', butotnClick);
+//回転ボタンクリック時に実行
+let turnPage = document.getElementById('turnPage');
+var angle = 0;
+ 
+  function foo(x){    
+    var turnPage = document.getElementById("turnPage");
+    angle = angle + x;
+    turnPage.style.transform = "rotate(" + 180 + "deg)"; //deg 時計回りで正の方向
+  };
