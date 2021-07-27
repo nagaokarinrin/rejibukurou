@@ -4,14 +4,18 @@
     <meta charset="utf-8">
     <meta name="auther" content=”りん”>
     <meta name="descriotion" cintent="スマホで表示する注文補助ツールです。">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
     <link rel="shortcut icon" href="image/favicon.ico">
     <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="image/android-chrome-192x192.png">
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
     <title>れじぶくろう</title>
     <link href="style.css" rel="stylesheet">
   </head>
   <BODY>
+    <div class="wrapper">
     <header>
     </header>
     <main>
@@ -71,20 +75,22 @@
           </div>
         </div>
         <div class="turnBtn">
-          <span class="button" onclick="foo(180)"><img src="image/botann_01.png"></span>
+          <span class="button" id="turnBtn"><img src="image/botann_01.png"></span>
         </p>
         </div>
       </div> 
       <div id="btn">
         <div class="btn01">
-          <span class="btn btn--orange btn--circle btn--circle-a btn--shadow">表示</span>  
+          <span class="btn btn--orange btn--circle btn--circle-a btn--shadow" id="btnChange">表示</span>  
         </div>
       </div>    
     </main>
+    <div class="push"></div>
     <footer>
       <small>&copy; 2021れじぶくろう</small>
     </footer>
-    <script src="js/main.js"></script>   
+    <script src="js/main.js"></script> 
+  </div>  
   </BODY>
 
   </html>

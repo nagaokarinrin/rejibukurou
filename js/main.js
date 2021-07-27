@@ -5,6 +5,7 @@ document.getElementById('poitCardRadiobuttonNeed').checked = true;
 
 //ボタン要素を取得
 let switchBtn = document.getElementById('btn');
+let turnBtn = document.getElementById('turnBtn');
 
 //表示・非表示を切り替える要素を取得
 let firstPage = document.getElementById('firstPage');
@@ -103,12 +104,25 @@ switchBtn.addEventListener('click', ()=> {
   changeElement(firstPage, secondPage);
 }, false);
 
-//回転ボタンクリック時に実行
-let turnPage = document.getElementById('turnPage');
-var angle = 0;
- 
-  function foo(x){    
-    var turnPage = document.getElementById("turnPage");
-    angle = angle + x;
+turnBtn.addEventListener('click', ()=> {
+  turnContent();
+}, false);
+
+function turnContent(){    
+  var turnPage = document.getElementById("turnPage");
+  if (turnPage.style.transform == "rotate(180deg)") {
+    turnPage.style.transform = "rotate(" + 0 + "deg)"; //deg 時計回りで正の方向
+  } else {
     turnPage.style.transform = "rotate(" + 180 + "deg)"; //deg 時計回りで正の方向
-  };
+  }
+};
+/*//要素の取得 → クリックされたとき
+document.getElementById('btnChange').addEventListener('click',function(){
+  //要素の取得 → 背景色を変える
+  document.getElementById('btnChange').style.borderRadius='100vh';
+  document.getElementById('btnChange').style.padding='20px 60px';
+  document.getElementById('btnChange').style.content="もどる";
+});
+*/
+
+

@@ -6,6 +6,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td,select,
 	color: #534f4f;
 	line-height: 1.6;
 	word-wrap: break-word;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 address,em,i {
@@ -174,8 +175,12 @@ span.btn--circle {
   line-height: 200px;
   width: 100px;
   height: 100px;
-  padding: 80px 50px;
+  padding: 80px 60px;
+/*JavaScriptで変えたい形
+	border-radius: 100vh;
+  padding: 20px 60px;*/
 }
+
 
 /* secondPage */
 #secondPage {
@@ -186,10 +191,10 @@ span.btn--circle {
 	padding-top: 20px;
 }
 .order01 img {
-	width: 40%;
+	width: 60%;
 }
 .order02 img {
-	width: 40%;
+	width: 60%;
 }
 
 @media only screen and (min-width:800px){
@@ -213,4 +218,12 @@ footer{
 	position: absolute;
 	bottom: 0; left: 0; right: 0;
 	color: #ee7d50;
+	margin-bottom: -200px;/*フッターの高さと等しいネガティブマージン*/
+}
+.wrapper{
+  min-height: 100vh;/*①高さの最小値*/
+  position: relative;/*②相対位置*/
+}
+.push {
+  height: 200px;/*フッターと同じ高さに指定*/
 }
