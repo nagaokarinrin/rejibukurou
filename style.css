@@ -107,7 +107,7 @@ input#rejibukuroRadiobuttonNoneed{
 }
 .radio02{
 	font-size: 50px;
-	margin-right: 60px;
+	margin-right: 69px;
 }
 input#poitCardRadiobuttonNoneed{
 	margin-left: 125px;
@@ -115,7 +115,7 @@ input#poitCardRadiobuttonNoneed{
 .radio-plain{
 	width: 20px;
   height: 20px;
-  top: -7px;
+  top: -9px;
   position: relative;
 }
 
@@ -137,7 +137,7 @@ input#poitCardRadiobuttonNoneed{
 	transition: 0.3s;
 	letter-spacing: 1px;
 	color: #525050;
-	border: 5px solid #4e4d4d;
+	border: 5px solid #9e9e9e;
 	box-shadow: 1px 1px 2px 0 #dfdddc inset;
 	border-radius: 20px;
 }
@@ -200,7 +200,15 @@ span.btn--circle {
 #secondPage {
 	height: 70%;
 }
+.order01 img {
+	width: 80%;
+	margin-top: 30px;
+	}
 
+.order02 img {
+	width: 80%;
+	margin-top: 30px;
+}
 
 @media only screen and (min-width:751px){
 	.order01 img {
@@ -210,17 +218,6 @@ span.btn--circle {
 		width: 50%;
 	}
 }
-
-
-@media only screen and (max-width:750px){
-	.order01 img {
-		width: 80%;
-		}
-	.order02 img {
-		width: 80%;
-		}
-}
-
 
 /* turnPage */
 #turnPage{
