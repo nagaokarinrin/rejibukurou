@@ -80,7 +80,7 @@ h2{
 
 /* ラジオボタン*/
 input#rejibukuroRadiobuttonNeed {
-	transform: scale(4.0); /* 2.5倍 */
+	transform: scale(4.0); 
 	margin-top: 10px;
 	margin-right: 40px;
 	margin-bottom: 10px;
@@ -89,7 +89,7 @@ input#rejibukuroRadiobuttonNeed {
 }
 input#rejibukuroRadiobuttonNoneed {
 	transform:scale(4.0);
-	margin-right: 20px;
+	margin-right: 40px;
 }
 input#poitCardRadiobuttonNeed {
 	transform:scale(4.0);
@@ -110,7 +110,7 @@ input#rejibukuroRadiobuttonNoneed{
 	margin-right: 60px;
 }
 input#poitCardRadiobuttonNoneed{
-	margin-left: 120px;
+	margin-left: 125px;
 }
 .radio-plain{
 	width: 20px;
@@ -204,21 +204,21 @@ span.btn--circle {
 #secondPage img{
 	padding-top: 20px;
 }
-.order01 img {
-	width: 40%;
-}
-.order02 img {
-	width: 40%;
-}
-
-@media only screen and (min-width:800px){
+@media only screen and (max-width:750px){
 	.order01 img {
 		width: 80%;
 		}
-	}
-@media only screen and (min-width:800px){
 	.order02 img {
 		width: 80%;
+		}
+}
+
+@media only screen and (min-width:751px){
+	.order01 img {
+		width: 40%;
+		}
+	.order02 img {
+		width: 40%;
 	}
 }
 
