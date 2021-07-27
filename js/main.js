@@ -11,9 +11,50 @@ let turnBtn = document.getElementById('turnBtn');
 let firstPage = document.getElementById('firstPage');
 let secondPage = document.getElementById('secondPage');
 
+//ボタンのstyle要素を取得
+let btnChange = document.getElementById('btnChange');
+let btnText = document.getElementById('btnText');
 
 //TOPでsecondPage要素を非表示
 secondPage.style.display='none';
+
+//上記関数をボタンクリック時に実行
+switchBtn.addEventListener('click', ()=> {
+  changeElement(firstPage, secondPage);
+
+  var isNeedRejibukurou = checkRejibukuroRadiobutton();
+  setImageNeedRejibukuro(isNeedRejibukurou);
+  var isNeedPointcard = checkPointcardRadiobutton();
+  setImageNeedPointcard(isNeedPointcard);
+
+  var text = getFreeFormText("input-message01");
+  var text2 = getFreeFormText("input-message02");
+  inputFreeTextToForm(text, "output-message01");
+  inputFreeTextToForm(text2, "output-message02");
+}, false);
+
+turnBtn.addEventListener('click', ()=> {
+  turnContent();
+}, false);
+
+//styleのdisplayを変更する関数
+let changeElement = (first, second)=> {
+  if(first.style.display==''){
+    first.style.display='none';
+    second.style.display='';
+    btnChange.style.borderRadius='100vh';
+    btnChange.style.padding='20px 60px';
+    btnText.textContent="もどる";
+    
+
+  }else{
+    first.style.display='';
+    second.style.display='none';
+    btnChange.borderRadius='';
+    btnChange.style.padding='';
+    btnText.textContent="表示";
+  }
+}
 
 // ラジオボタン(レジ袋)のチェック状態を返す
 function checkRejibukuroRadiobutton(){
@@ -43,28 +84,6 @@ function setImageNeedPointcard(isNeed) {
   } else {
     image.src = 'image/rejibukurou_04.png';
   }
-}
-
-//styleのdisplayを変更する関数
-let changeElement = (first, second)=> {
-  var isNeedRejibukurou = checkRejibukuroRadiobutton();
-  setImageNeedRejibukuro(isNeedRejibukurou);
-
-  var isNeedPointcard = checkPointcardRadiobutton();
-  setImageNeedPointcard(isNeedPointcard);
-
-  if(first.style.display==''){
-    first.style.display='none';
-    second.style.display='';
-  }else{
-    first.style.display='';
-    second.style.display='none';
-  }
-
-  var text = getFreeFormText("input-message01");
-  var text2 = getFreeFormText("input-message02");
-  inputFreeTextToForm(text, "output-message01");
-  inputFreeTextToForm(text2, "output-message02");
 }
 
 //テキスト入力
@@ -99,15 +118,6 @@ const btn = document.getElementById("btn");
       flg = !flg;
     }
 
-//上記関数をボタンクリック時に実行
-switchBtn.addEventListener('click', ()=> {
-  changeElement(firstPage, secondPage);
-}, false);
-
-turnBtn.addEventListener('click', ()=> {
-  turnContent();
-}, false);
-
 function turnContent(){    
   var turnPage = document.getElementById("turnPage");
   if (turnPage.style.transform == "rotate(180deg)") {
@@ -124,5 +134,6 @@ document.getElementById('btnChange').addEventListener('click',function(){
   document.getElementById('btnChange').style.content="もどる";
 });
 */
+
 
 
