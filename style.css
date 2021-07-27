@@ -3,10 +3,9 @@
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td,select,header,nav,section,footer {
 	margin: 0;
 	padding: 0;
-	color: #534f4f;
+	color: #333;
 	line-height: 1.6;
 	word-wrap: break-word;
-	font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 address,em,i {
@@ -35,7 +34,7 @@ li {
 small{
 	font-size: 100%;
 	text-decoration: none;
-	/*color: #645857;*/
+	color: #645857;
 }
 iframe {
 	border: 0;
@@ -78,78 +77,86 @@ h2{
 	}
 }
 
-/* ラジオボタン*/
-input#rejibukuroRadiobuttonNeed {
-	transform:scale(3.0);
-
+/* チェックボックス */
+input[type=checkbox] {
+	display: none;
 }
-input#rejibukuroRadiobuttonNoneed {
-	transform:scale(3.0);
+.checkbox03 {
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px 30px;
+	position: relative;
+	width: auto;
+	font-size: 50px;
 }
-input#poitCardRadiobuttonNeed {
-	transform:scale(3.0);
+.checkbox03::before {
+	background: #fff;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	content: '';
+	display: block;
+	height: 40px;
+	left: -30px;
+	margin-top: -20px;
+	position: absolute;
+	top: 50%;
+	width: 40px;
 }
-input#poitCardRadiobuttonNoneed {
-	transform:scale(3.0);
+.checkbox03::after {
+	border-right: 12px solid #ee7d50;
+	border-bottom: 6px solid #ee7d50;
+	content: '';
+	display: block;
+	height: 40px;
+	left: -15px;
+	margin-top: -16px;
+	opacity: 0;
+	position: absolute;
+	top: 40%;
+	transform: rotate(45deg) translate3d(0,2px,0) scale3d(.7,.7,1);
+	transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+	width: 25px;
 }
-.radio01{
-	font-size: 40px;
+input[type=checkbox]:checked + .checkbox03::before {
+	border-color: #666;
 }
-input#rejibukuroRadiobuttonNoneed{
-	margin-left: 120px;
+input[type=checkbox]:checked + .checkbox03::after {
+	opacity: 1;
+	transform: rotate(45deg) scale3d(1,1,1);
 }
-.radio02{
-	font-size: 40px;
-}
-input#poitCardRadiobuttonNoneed{
-	margin-left: 90px;
-}
-
 
 /* 入力フォーム */
 .cp_iptxt {
 	position: relative;
-	width: 80%;
-	margin: 20px 3%;
+	width: 70%;
+	margin: 40px 3%;
 	margin-left: auto;
 	margin-right: auto;
-	
 }
 .cp_iptxt input[type='text'] {
-	font: 35px/30px sans-serif;
+	font: 15px/24px sans-serif;
 	box-sizing: border-box;
-	width: 80%;
+	width: 90%;
 	padding: 0.8em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #525050;
-	border: 5px solid #4e4d4d;
-	box-shadow: 1px 1px 2px 0 #dfdddc inset;
-	border-radius: 20px;
+	color: #aaaaaa;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 8px;
 }
 .ef input[type='text']:focus {
 	outline: none;
 	box-shadow: inset 1px 1px 2px 0 #c9c9c9;
 }
-
-p#output-message01{
-	font-size: 80px;
-    color: #888181;
-}
-
-p#output-message02{
-	font-size: 80px;
-    color: #888181;
-}
-
 /* 回転ボタン */
 .turnBtn {
 	padding-top: 70px;
-
 }
 /* 表示ボタン */
 .btn01 {
-	padding-top: 50px;
+	padding-top: 70px;
 }
 
 
@@ -175,12 +182,8 @@ span.btn--circle {
   line-height: 200px;
   width: 100px;
   height: 100px;
-  padding: 80px 60px;
-/*JavaScriptで変えたい形
-	border-radius: 100vh;
-  padding: 20px 60px;*/
+  padding: 80px 50px;
 }
-
 
 /* secondPage */
 #secondPage {
@@ -190,40 +193,9 @@ span.btn--circle {
 #secondPage img{
 	padding-top: 20px;
 }
-.order01 img {
-	width: 60%;
-}
-.order02 img {
-	width: 60%;
-}
 
-@media only screen and (min-width:800px){
-	.order01 img {
-		width: 80%;
-		}
-	}
-@media only screen and (min-width:800px){
-	.order02 img {
-		width: 80%;
-	}
-}
-
-/* turnPage */
-#turnPage{
-	padding-top: 60px;
-  padding-bottom: 60px;
-}
 /* コピーライト */
 footer{
 	position: absolute;
 	bottom: 0; left: 0; right: 0;
-	color: #ee7d50;
-	margin-bottom: -200px;/*フッターの高さと等しいネガティブマージン*/
-}
-.wrapper{
-  min-height: 100vh;/*①高さの最小値*/
-  position: relative;/*②相対位置*/
-}
-.push {
-  height: 200px;/*フッターと同じ高さに指定*/
 }
