@@ -4,14 +4,19 @@
     <meta charset="utf-8">
     <meta name="auther" content=”りん”>
     <meta name="descriotion" cintent="スマホで表示する注文補助ツールです。">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico?">
     <link rel="shortcut icon" href="image/favicon.ico">
     <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="image/android-chrome-192x192.png">
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
     <title>れじぶくろう</title>
     <link href="style.css" rel="stylesheet">
   </head>
   <BODY>
+    <div class="wrapper">
     <header>
     </header>
     <main>
@@ -21,8 +26,12 @@
           <h2>レジ袋</h2>
             <!-- <input type="checkbox" id="isNeedReceipt" name="checkbox03" checked="checked"> -->
             <form>
-              <input id="rejibukuroRadiobuttonNeed" type="radio" name="q1" value=true>いる
-              <input id="rejibukuroRadiobuttonNoneed" type="radio" name="q1" value=false>いらない
+              <div class="radio01">
+              <input id="rejibukuroRadiobuttonNeed" type="radio" name="q1" class="radio-plain"value=true>
+              <label for="radio-b01">いる</label>
+              <input id="rejibukuroRadiobuttonNoneed" type="radio" name="q1" class="radio-plain"value=false>
+              <label for="radio-02">いらない</label>
+              </div>
             </form>
 
         </div>
@@ -30,8 +39,12 @@
           <h2>ポイントカード</h2>
             <!-- <input type="checkbox" id="isNeedPointcard" name="checkbox03" checked="checked"> -->
             <form>
-              <input id="poitCardRadiobuttonNeed" type="radio" name="q1" value=true>ある
-              <input id="poitCardRadiobuttonNoneed" type="radio" name="q1" value=false>ない
+              <div class="radio02">
+              <input id="poitCardRadiobuttonNeed" type="radio" name="q1" class="radio-plain"value=true>
+              <label for="radio-b01">ある</label>
+              <input id="poitCardRadiobuttonNoneed" type="radio" name="q1" class="radio-plain"value=false>
+              <label for="radio-b01">ない</label>
+              </div>
             </form>            
 
         </div>
@@ -39,39 +52,48 @@
         <p>（自動保存されます）</p>
           <div class="cp_iptxt">
             <label class="ef">
-            <input type="text" placeholder="支払い方法など">
+            <input type="text" id="input-message01" placeholder="支払い方法など">
             </label>
           </div>
           <div class="cp_iptxt">
             <label class="ef">
-            <input type="text" placeholder="支払い方法など">
+            <input type="text" id="input-message02" placeholder="">
             </label>
           </div>
       </div> 
 
       <div id="secondPage">
-        <div class="order01">
-          <img id="rejibukuroImage" src="image/rejibukurou_01.png" alt="">
-        </div>
-        <div class="order02">
-          <img id="pointcardImage" src="image/rejibukurou_02.png" alt="">
+        <div id="turnPage">
+          <div class="order01">
+            <img id="rejibukuroImage" src="image/rejibukurou_01.png" alt="">
+          </div>
+          <div class="order02">
+            <img id="pointcardImage" src="image/rejibukurou_02.png" alt="">
+          </div>
+          <div class="message">
+            <p id="output-message01"></p>
+            <p id="output-message02"></p>
+          </div>
         </div>
         <div class="turnBtn">
-          <span class="button"><img src="image/botann_01.png"></span>
+          <span class="button" id="turnBtn"><img src="image/botann_01.png"></span>
+        </p>
         </div>
       </div> 
-
       <div id="btn">
         <div class="btn01">
-          <span class="btn btn--orange btn--circle btn--circle-a btn--shadow">表示</span>
-          
+          <span class="btn btn--orange btn--circle btn--circle-a btn--shadow" id="btnChange">
+            <a id=btnText>表示</a>
+          </span>  
         </div>
       </div>    
     </main>
+    <div class="push"></div>
     <footer>
-      <small>&copy; 2021れじぶくろうnorinrin.com</small>
+      <small>&copy; 2021れじぶくろう</small>
     </footer>
-    <script src="js/main.js"></script>   
+    <script src="js/main.js"></script> 
+  </div>  
   </BODY>
 
   </html>
