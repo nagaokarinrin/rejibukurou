@@ -201,9 +201,17 @@ span.btn--circle {
 	height: 70%;
 }
 
-#secondPage img{
-	padding-top: 20px;
+
+@media only screen and (min-width:751px){
+	.order01 img {
+		width: 50%;
+		}
+	.order02 img {
+		width: 50%;
+	}
 }
+
+
 @media only screen and (max-width:750px){
 	.order01 img {
 		width: 80%;
@@ -213,14 +221,6 @@ span.btn--circle {
 		}
 }
 
-@media only screen and (min-width:751px){
-	.order01 img {
-		width: 40%;
-		}
-	.order02 img {
-		width: 40%;
-	}
-}
 
 /* turnPage */
 #turnPage{
