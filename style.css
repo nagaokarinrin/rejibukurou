@@ -231,6 +231,8 @@ margin-top: 10px;
 
 }
 .wrapper{
+	max-width: 900px;
+	margin: 0 auto;`
   min-height: 100vh;/*①高さの最小値*/
   position: relative;/*②相対位置*/
 }
