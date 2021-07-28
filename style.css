@@ -226,12 +226,14 @@ footer{
 	position: absolute;
 	bottom: 0; left: 0; right: 0;
 	color: #ee7d50;
-	margin-bottom: -200px;/*フッターの高さと等しいネガティブマージン*/
+	margin-bottom: -50px;/*フッターの高さと等しいネガティブマージン*/
+margin-top: 10px;
+
 }
 .wrapper{
   min-height: 100vh;/*①高さの最小値*/
   position: relative;/*②相対位置*/
 }
 .push {
-  height: 200px;/*フッターと同じ高さに指定*/
+  height: 10px;/*フッターと同じ高さに指定*/
 }
